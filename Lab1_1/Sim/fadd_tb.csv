@@ -1,0 +1,9 @@
+Time,fadd_tb.led2,fadd_tb.led1,fadd_tb.key1,fadd_tb.key2,fadd_tb.key3,fadd_tb.dut.A,fadd_tb.dut.B,fadd_tb.dut.Cin,fadd_tb.dut.Cout,fadd_tb.dut.S,fadd_tb.dut.key1,fadd_tb.dut.key2,fadd_tb.dut.key3,fadd_tb.dut.led1,fadd_tb.dut.led2
+0,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1
+20,1,0,1,1,0,0,0,1,0,1,1,1,0,0,1
+40,1,0,1,0,1,0,1,0,0,1,1,0,1,0,1
+60,0,1,1,0,0,0,1,1,1,0,1,0,0,1,0
+80,1,0,0,1,1,1,0,0,0,1,0,1,1,0,1
+100,0,1,0,1,0,1,0,1,1,0,0,1,0,1,0
+120,0,1,0,0,1,1,1,0,1,0,0,0,1,1,0
+140,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0

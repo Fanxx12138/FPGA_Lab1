@@ -1,0 +1,26 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[json]
+[dumpfile] "/media/sf_shared/Lab1/Lab1_2/Sim/cmp_tb.vcd"
+[timestart] 0
+[size] 1100 620
+[pos] -1 -1
+[treeopen] cmp_tb.
+[sst_width] 210
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+cmp_tb.B2
+cmp_tb.B3
+@22
+cmp_tb.dut.A
+cmp_tb.dut.B
+@28
+cmp_tb.dut.lt
+cmp_tb.dut.eq
+cmp_tb.dut.gt
+@28
+cmp_tb.led1
+cmp_tb.led2
+cmp_tb.led3

@@ -1,0 +1,88 @@
+$date
+	Sat Oct 10 15:54:02 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module fadd_tb $end
+$var wire 1 ! led2 $end
+$var wire 1 " led1 $end
+$var reg 1 # key1 $end
+$var reg 1 $ key2 $end
+$var reg 1 % key3 $end
+$scope module dut $end
+$var wire 1 & A $end
+$var wire 1 ' B $end
+$var wire 1 ( Cin $end
+$var wire 1 ) Cout $end
+$var wire 1 * S $end
+$var wire 1 # key1 $end
+$var wire 1 $ key2 $end
+$var wire 1 % key3 $end
+$var wire 1 " led1 $end
+$var wire 1 ! led2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0)
+0(
+0'
+0&
+1%
+1$
+1#
+1"
+1!
+$end
+#20
+0"
+1*
+1(
+0%
+#40
+0(
+1'
+1%
+0$
+#60
+0!
+1"
+1)
+0*
+1(
+0%
+#80
+1!
+0"
+0)
+1*
+0(
+0'
+1&
+1%
+1$
+0#
+#100
+0!
+1)
+1"
+0*
+1(
+0%
+#120
+0(
+1'
+1%
+0$
+#140
+0"
+1*
+1(
+0%
+#160

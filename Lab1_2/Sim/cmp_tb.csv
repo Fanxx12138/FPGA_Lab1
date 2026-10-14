@@ -1,0 +1,5 @@
+Time,cmp_tb.led3,cmp_tb.led2,cmp_tb.led1,cmp_tb.B2,cmp_tb.B3,cmp_tb.dut.A,cmp_tb.dut.B,cmp_tb.dut.eq,cmp_tb.dut.gt,cmp_tb.dut.key1,cmp_tb.dut.key2,cmp_tb.dut.led1,cmp_tb.dut.led2,cmp_tb.dut.led3,cmp_tb.dut.lt
+0,1,0,1,1,1,0,0,1,0,1,1,1,0,1,0
+20,1,1,0,1,0,0,1,0,0,1,0,0,1,1,1
+40,1,0,1,0,0,1,1,1,0,0,0,1,0,1,0
+60,0,1,1,0,1,1,0,0,1,0,1,1,1,0,0

@@ -1,0 +1,64 @@
+$date
+	Sat Oct 10 18:55:53 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module cmp_tb $end
+$var wire 1 ! led3 $end
+$var wire 1 " led2 $end
+$var wire 1 # led1 $end
+$var reg 1 $ B2 $end
+$var reg 1 % B3 $end
+$scope module dut $end
+$var wire 1 & A $end
+$var wire 1 ' B $end
+$var wire 1 ( eq $end
+$var wire 1 ) gt $end
+$var wire 1 $ key1 $end
+$var wire 1 % key2 $end
+$var wire 1 # led1 $end
+$var wire 1 " led2 $end
+$var wire 1 ! led3 $end
+$var wire 1 * lt $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0)
+1(
+0'
+0&
+1%
+1$
+1#
+0"
+1!
+$end
+#20
+1"
+0#
+0(
+1*
+1'
+0%
+#40
+1#
+0"
+0*
+1(
+1&
+0$
+#60
+0!
+1"
+1)
+0(
+0'
+1%
+#80
