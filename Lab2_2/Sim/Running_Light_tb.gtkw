@@ -1,0 +1,22 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[json]
+[dumpfile] "/media/sf_shared/Lab2/Lab2_2/Sim/Running_Light_tb.vcd"
+[timestart] 0
+[size] 1100 620
+[pos] -1 -1
+[treeopen] Running_Light_tb.
+[sst_width] 210
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+Running_Light_tb.clk
+Running_Light_tb.B3
+Running_Light_tb.led0
+Running_Light_tb.led1
+Running_Light_tb.led2
+Running_Light_tb.led3
+@22
+Running_Light_tb.dut.cnt[0:24]
+Running_Light_tb.dut.state[0:1]

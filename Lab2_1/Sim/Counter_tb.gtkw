@@ -1,0 +1,20 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[json]
+[dumpfile] "/media/sf_shared/Lab2/Lab2_1/Sim/Counter_tb.vcd"
+[timestart] 0
+[size] 1100 620
+[pos] -1 -1
+[treeopen] Counter_tb.
+[sst_width] 210
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+Counter_tb.sys_clk
+Counter_tb.sys_rst
+Counter_tb.led_out
+@22
+Counter_tb.dut.cnt[0:24]
+@28
+Counter_tb.dut.state

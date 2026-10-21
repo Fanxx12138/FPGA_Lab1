@@ -1,0 +1,152 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Running command `read_verilog Counter.v; hierarchy -top Counter; proc; opt; stat' --
+
+1. Executing Verilog-2005 frontend: Counter.v
+Parsing Verilog input from `Counter.v' to AST representation.
+Generating RTLIL representation for module `\Counter'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \Counter
+
+2.2. Analyzing design hierarchy..
+Top module:  \Counter
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$Counter.v:15$2 in module Counter.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\Counter.$proc$Counter.v:11$11'.
+  Set init value: \led_out = 1'0
+Found init rule in `\Counter.$proc$Counter.v:10$10'.
+  Set init value: \cnt = 25'0000000000000000000000000
+Found init rule in `\Counter.$proc$Counter.v:9$9'.
+  Set init value: \state = 1'1
+
+3.4. Executing PROC_ARST pass (detect async resets in processes).
+
+3.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Counter.$proc$Counter.v:11$11'.
+     1/1: $1\led_out[0:0]
+Creating decoders for process `\Counter.$proc$Counter.v:10$10'.
+     1/1: $1\cnt[24:0]
+Creating decoders for process `\Counter.$proc$Counter.v:9$9'.
+     1/1: $1\state[0:0]
+Creating decoders for process `\Counter.$proc$Counter.v:15$2'.
+     1/2: $0\led_out[0:0]
+     2/2: $0\cnt[24:0]
+Creating decoders for process `\Counter.$proc$Counter.v:13$1'.
+     1/1: $0\state[0:0]
+
+3.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\Counter.\cnt' using process `\Counter.$proc$Counter.v:15$2'.
+  created $dff cell `$procdff$24' with positive edge clock.
+Creating register for signal `\Counter.\led_out' using process `\Counter.$proc$Counter.v:15$2'.
+  created $dff cell `$procdff$25' with positive edge clock.
+Creating register for signal `\Counter.\state' using process `\Counter.$proc$Counter.v:13$1'.
+  created $dff cell `$procdff$26' with positive edge clock.
+
+3.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `Counter.$proc$Counter.v:11$11'.
+Removing empty process `Counter.$proc$Counter.v:10$10'.
+Removing empty process `Counter.$proc$Counter.v:9$9'.
+Found and cleaned up 2 empty switches in `\Counter.$proc$Counter.v:15$2'.
+Removing empty process `Counter.$proc$Counter.v:15$2'.
+Removing empty process `Counter.$proc$Counter.v:13$1'.
+Cleaned up 2 empty switches.
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Counter.
+<suppressed ~2 debug messages>
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Counter'.
+Removed a total of 0 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Counter.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Counter'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Counter..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Counter.
+
+4.9. Finished OPT passes. (There is nothing left to do.)
+
+5. Printing statistics.
+
+=== Counter ===
+
+   Number of wires:                 14
+   Number of wire bits:            110
+   Number of public wires:           5
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     $add                            1
+     $dff                            3
+     $eq                             1
+     $logic_and                      1
+     $mux                            4
+     $not                            2
+
+End of script. Logfile hash: be3828488c
+CPU: user 0.01s system 0.00s, MEM: 15.74 MB total, 9.82 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 22% 2x opt_expr (0 sec), 17% 1x opt_clean (0 sec), ...
