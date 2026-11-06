@@ -1,0 +1,199 @@
+
+13. Printing statistics.
+
+=== key_debounce ===
+
+   Number of wires:                 15
+   Number of wire bits:             87
+   Number of public wires:           7
+   Number of public wire bits:      25
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     $add                            1
+     $adff                           3
+     $and                            1
+     $eq                             1
+     $mux                            4
+     $ne                             1
+     $not                            1
+
+=== screen_ctrl ===
+
+   Number of wires:                 11
+   Number of wire bits:             16
+   Number of public wires:           4
+   Number of public wire bits:       5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $adff                           1
+     $eq                             2
+     $logic_not                      1
+     $mux                            3
+     $pmux                           1
+
+=== vga_bar ===
+
+   Number of wires:                 21
+   Number of wire bits:            180
+   Number of public wires:           2
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $lt                            10
+     $mux                           10
+
+=== vga_ctrl ===
+
+   Number of wires:                 34
+   Number of wire bits:            163
+   Number of public wires:          12
+   Number of public wire bits:      78
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 31
+     $add                            2
+     $adff                           2
+     $eq                             2
+     $ge                             3
+     $le                             2
+     $logic_and                      5
+     $lt                             3
+     $mux                           10
+     $sub                            2
+
+=== vga_end ===
+
+   Number of wires:                 66
+   Number of wire bits:            487
+   Number of public wires:          10
+   Number of public wire bits:      56
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 62
+     $div                            2
+     $eq                             7
+     $ge                             4
+     $logic_and                      7
+     $logic_not                      1
+     $lt                             4
+     $mux                           16
+     $pmux                           3
+     $reduce_or                      4
+     $shiftx                        11
+     $sub                            3
+
+=== vga_must ===
+
+   Number of wires:                 71
+   Number of wire bits:            501
+   Number of public wires:          11
+   Number of public wire bits:      57
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 67
+     $div                            2
+     $eq                             7
+     $ge                             5
+     $logic_and                      9
+     $logic_not                      1
+     $lt                             5
+     $mux                           16
+     $pmux                           4
+     $reduce_or                      6
+     $shiftx                         9
+     $sub                            3
+
+=== vga_pic ===
+
+   Number of wires:                 13
+   Number of wire bits:            107
+   Number of public wires:           9
+   Number of public wire bits:      88
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $adff                           1
+     $eq                             2
+     $logic_not                      1
+     $pmux                           1
+     vga_bar                         1
+     vga_end                         1
+     vga_must                        1
+
+=== vga_pll ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $adff                           1
+     $not                            1
+
+=== vga_top ===
+
+   Number of wires:                 12
+   Number of wire bits:             61
+   Number of public wires:          12
+   Number of public wire bits:      61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     key_debounce                    1
+     screen_ctrl                     1
+     vga_ctrl                        1
+     vga_pic                         1
+     vga_pll                         1
+
+=== design hierarchy ===
+
+   vga_top                           1
+     key_debounce                    1
+     screen_ctrl                     1
+     vga_ctrl                        1
+     vga_pic                         1
+       vga_bar                       1
+       vga_end                       1
+       vga_must                      1
+     vga_pll                         1
+
+   Number of wires:                247
+   Number of wire bits:           1606
+   Number of public wires:          70
+   Number of public wire bits:     399
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                207
+     $add                            3
+     $adff                           8
+     $and                            1
+     $div                            4
+     $eq                            21
+     $ge                            12
+     $le                             2
+     $logic_and                     21
+     $logic_not                      4
+     $lt                            22
+     $mux                           59
+     $ne                             1
+     $not                            2
+     $pmux                           9
+     $reduce_or                     10
+     $shiftx                        20
+     $sub                            8
+

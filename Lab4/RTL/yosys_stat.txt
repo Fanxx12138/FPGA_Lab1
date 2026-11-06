@@ -1,0 +1,814 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Running command `read_verilog RTL/vga_pll.v RTL/vga_ctrl.v RTL/key_debounce.v RTL/screen_ctrl.v RTL/vga_bar.v RTL/vga_must.v RTL/vga_end.v RTL/vga_pic.v RTL/vga_top.v; hierarchy -check -top vga_top; proc; opt; stat; show -format png -prefix RTL/vga_top_RTL' --
+
+1. Executing Verilog-2005 frontend: RTL/vga_pll.v
+Parsing Verilog input from `RTL/vga_pll.v' to AST representation.
+Generating RTLIL representation for module `\vga_pll'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: RTL/vga_ctrl.v
+Parsing Verilog input from `RTL/vga_ctrl.v' to AST representation.
+Generating RTLIL representation for module `\vga_ctrl'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: RTL/key_debounce.v
+Parsing Verilog input from `RTL/key_debounce.v' to AST representation.
+Generating RTLIL representation for module `\key_debounce'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: RTL/screen_ctrl.v
+Parsing Verilog input from `RTL/screen_ctrl.v' to AST representation.
+Generating RTLIL representation for module `\screen_ctrl'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: RTL/vga_bar.v
+Parsing Verilog input from `RTL/vga_bar.v' to AST representation.
+Generating RTLIL representation for module `\vga_bar'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: RTL/vga_must.v
+Parsing Verilog input from `RTL/vga_must.v' to AST representation.
+Generating RTLIL representation for module `\vga_must'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: RTL/vga_end.v
+Parsing Verilog input from `RTL/vga_end.v' to AST representation.
+Generating RTLIL representation for module `\vga_end'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: RTL/vga_pic.v
+Parsing Verilog input from `RTL/vga_pic.v' to AST representation.
+Generating RTLIL representation for module `\vga_pic'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: RTL/vga_top.v
+Parsing Verilog input from `RTL/vga_top.v' to AST representation.
+Generating RTLIL representation for module `\vga_top'.
+Successfully finished Verilog frontend.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1. Analyzing design hierarchy..
+Top module:  \vga_top
+Used module:     \vga_ctrl
+Used module:     \vga_pic
+Used module:         \vga_end
+Used module:         \vga_must
+Used module:         \vga_bar
+Used module:     \screen_ctrl
+Used module:     \key_debounce
+Used module:     \vga_pll
+
+10.2. Analyzing design hierarchy..
+Top module:  \vga_top
+Used module:     \vga_ctrl
+Used module:     \vga_pic
+Used module:         \vga_end
+Used module:         \vga_must
+Used module:         \vga_bar
+Used module:     \screen_ctrl
+Used module:     \key_debounce
+Used module:     \vga_pll
+Removed 0 unused modules.
+
+11. Executing PROC pass (convert processes to netlists).
+
+11.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+11.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$RTL/vga_pic.v:49$280 in module vga_pic.
+Removed 3 dead cases from process $proc$RTL/vga_end.v:78$207 in module vga_end.
+Marked 6 switch rules as full_case in process $proc$RTL/vga_end.v:78$207 in module vga_end.
+Removed 4 dead cases from process $proc$RTL/vga_must.v:91$89 in module vga_must.
+Marked 8 switch rules as full_case in process $proc$RTL/vga_must.v:91$89 in module vga_must.
+Marked 10 switch rules as full_case in process $proc$RTL/vga_bar.v:30$52 in module vga_bar.
+Marked 2 switch rules as full_case in process $proc$RTL/screen_ctrl.v:25$50 in module screen_ctrl.
+Marked 1 switch rules as full_case in process $proc$RTL/key_debounce.v:49$46 in module key_debounce.
+Marked 3 switch rules as full_case in process $proc$RTL/key_debounce.v:31$41 in module key_debounce.
+Marked 3 switch rules as full_case in process $proc$RTL/vga_ctrl.v:64$8 in module vga_ctrl.
+Marked 2 switch rules as full_case in process $proc$RTL/vga_ctrl.v:53$4 in module vga_ctrl.
+Marked 1 switch rules as full_case in process $proc$RTL/vga_pll.v:15$1 in module vga_pll.
+Removed a total of 7 dead cases.
+
+11.3. Executing PROC_INIT pass (extract init attributes).
+
+11.4. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \sys_rst_n in `\vga_pic.$proc$RTL/vga_pic.v:49$280'.
+Found async reset \rst_n in `\screen_ctrl.$proc$RTL/screen_ctrl.v:25$50'.
+Found async reset \rst_n in `\key_debounce.$proc$RTL/key_debounce.v:49$46'.
+Found async reset \rst_n in `\key_debounce.$proc$RTL/key_debounce.v:31$41'.
+Found async reset \sys_rst_n in `\vga_ctrl.$proc$RTL/vga_ctrl.v:64$8'.
+Found async reset \sys_rst_n in `\vga_ctrl.$proc$RTL/vga_ctrl.v:53$4'.
+Found async reset \sys_rst_n in `\vga_pll.$proc$RTL/vga_pll.v:15$1'.
+
+11.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\vga_pic.$proc$RTL/vga_pic.v:49$280'.
+     1/1: $0\pix_data[15:0]
+Creating decoders for process `\vga_end.$proc$RTL/vga_end.v:78$207'.
+     1/7: $6\pix_data[15:0]
+     2/7: $5\pix_data[15:0]
+     3/7: $4\pix_data[15:0]
+     4/7: $3\pix_data[15:0]
+     5/7: $2\pix_data[15:0]
+     6/7: $1\pix_data[15:0]
+     7/7: $0\pix_data[15:0]
+Creating decoders for process `\vga_must.$proc$RTL/vga_must.v:91$89'.
+     1/9: $8\pix_data[15:0]
+     2/9: $7\pix_data[15:0]
+     3/9: $6\pix_data[15:0]
+     4/9: $5\pix_data[15:0]
+     5/9: $4\pix_data[15:0]
+     6/9: $3\pix_data[15:0]
+     7/9: $2\pix_data[15:0]
+     8/9: $1\pix_data[15:0]
+     9/9: $0\pix_data[15:0]
+Creating decoders for process `\vga_bar.$proc$RTL/vga_bar.v:30$52'.
+     1/11: $10\pix_data[15:0]
+     2/11: $9\pix_data[15:0]
+     3/11: $8\pix_data[15:0]
+     4/11: $7\pix_data[15:0]
+     5/11: $6\pix_data[15:0]
+     6/11: $5\pix_data[15:0]
+     7/11: $4\pix_data[15:0]
+     8/11: $3\pix_data[15:0]
+     9/11: $2\pix_data[15:0]
+    10/11: $1\pix_data[15:0]
+    11/11: $0\pix_data[15:0]
+Creating decoders for process `\screen_ctrl.$proc$RTL/screen_ctrl.v:25$50'.
+     1/1: $0\screen[1:0]
+Creating decoders for process `\key_debounce.$proc$RTL/key_debounce.v:49$46'.
+     1/1: $0\key_reg_d[0:0]
+Creating decoders for process `\key_debounce.$proc$RTL/key_debounce.v:31$41'.
+     1/2: $0\key_reg[0:0]
+     2/2: $0\cnt[18:0]
+Creating decoders for process `\vga_ctrl.$proc$RTL/vga_ctrl.v:64$8'.
+     1/1: $0\cnt_v[9:0]
+Creating decoders for process `\vga_ctrl.$proc$RTL/vga_ctrl.v:53$4'.
+     1/1: $0\cnt_h[9:0]
+Creating decoders for process `\vga_pll.$proc$RTL/vga_pll.v:15$1'.
+     1/1: $0\vga_clk[0:0]
+
+11.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\vga_end.\pix_data' from process `\vga_end.$proc$RTL/vga_end.v:78$207'.
+No latch inferred for signal `\vga_must.\pix_data' from process `\vga_must.$proc$RTL/vga_must.v:91$89'.
+No latch inferred for signal `\vga_bar.\pix_data' from process `\vga_bar.$proc$RTL/vga_bar.v:30$52'.
+
+11.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\vga_pic.\pix_data' using process `\vga_pic.$proc$RTL/vga_pic.v:49$280'.
+  created $adff cell `$procdff$643' with positive edge clock and negative level reset.
+Creating register for signal `\screen_ctrl.\screen' using process `\screen_ctrl.$proc$RTL/screen_ctrl.v:25$50'.
+  created $adff cell `$procdff$644' with positive edge clock and negative level reset.
+Creating register for signal `\key_debounce.\key_reg_d' using process `\key_debounce.$proc$RTL/key_debounce.v:49$46'.
+  created $adff cell `$procdff$645' with positive edge clock and negative level reset.
+Creating register for signal `\key_debounce.\cnt' using process `\key_debounce.$proc$RTL/key_debounce.v:31$41'.
+  created $adff cell `$procdff$646' with positive edge clock and negative level reset.
+Creating register for signal `\key_debounce.\key_reg' using process `\key_debounce.$proc$RTL/key_debounce.v:31$41'.
+  created $adff cell `$procdff$647' with positive edge clock and negative level reset.
+Creating register for signal `\vga_ctrl.\cnt_v' using process `\vga_ctrl.$proc$RTL/vga_ctrl.v:64$8'.
+  created $adff cell `$procdff$648' with positive edge clock and negative level reset.
+Creating register for signal `\vga_ctrl.\cnt_h' using process `\vga_ctrl.$proc$RTL/vga_ctrl.v:53$4'.
+  created $adff cell `$procdff$649' with positive edge clock and negative level reset.
+Creating register for signal `\vga_pll.\vga_clk' using process `\vga_pll.$proc$RTL/vga_pll.v:15$1'.
+  created $adff cell `$procdff$650' with positive edge clock and negative level reset.
+
+11.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\vga_pic.$proc$RTL/vga_pic.v:49$280'.
+Removing empty process `vga_pic.$proc$RTL/vga_pic.v:49$280'.
+Found and cleaned up 6 empty switches in `\vga_end.$proc$RTL/vga_end.v:78$207'.
+Removing empty process `vga_end.$proc$RTL/vga_end.v:78$207'.
+Found and cleaned up 8 empty switches in `\vga_must.$proc$RTL/vga_must.v:91$89'.
+Removing empty process `vga_must.$proc$RTL/vga_must.v:91$89'.
+Found and cleaned up 10 empty switches in `\vga_bar.$proc$RTL/vga_bar.v:30$52'.
+Removing empty process `vga_bar.$proc$RTL/vga_bar.v:30$52'.
+Found and cleaned up 4 empty switches in `\screen_ctrl.$proc$RTL/screen_ctrl.v:25$50'.
+Removing empty process `screen_ctrl.$proc$RTL/screen_ctrl.v:25$50'.
+Removing empty process `key_debounce.$proc$RTL/key_debounce.v:49$46'.
+Found and cleaned up 2 empty switches in `\key_debounce.$proc$RTL/key_debounce.v:31$41'.
+Removing empty process `key_debounce.$proc$RTL/key_debounce.v:31$41'.
+Found and cleaned up 2 empty switches in `\vga_ctrl.$proc$RTL/vga_ctrl.v:64$8'.
+Removing empty process `vga_ctrl.$proc$RTL/vga_ctrl.v:64$8'.
+Found and cleaned up 1 empty switch in `\vga_ctrl.$proc$RTL/vga_ctrl.v:53$4'.
+Removing empty process `vga_ctrl.$proc$RTL/vga_ctrl.v:53$4'.
+Removing empty process `vga_pll.$proc$RTL/vga_pll.v:15$1'.
+Cleaned up 34 empty switches.
+
+12. Executing OPT pass (performing simple optimizations).
+
+12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module vga_top.
+Optimizing module vga_pic.
+<suppressed ~1 debug messages>
+Optimizing module vga_end.
+<suppressed ~3 debug messages>
+Optimizing module vga_must.
+<suppressed ~4 debug messages>
+Optimizing module vga_bar.
+Optimizing module screen_ctrl.
+<suppressed ~1 debug messages>
+Optimizing module key_debounce.
+Optimizing module vga_ctrl.
+<suppressed ~3 debug messages>
+Optimizing module vga_pll.
+
+12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\vga_top'.
+Finding identical cells in module `\vga_pic'.
+Finding identical cells in module `\vga_end'.
+<suppressed ~156 debug messages>
+Finding identical cells in module `\vga_must'.
+<suppressed ~234 debug messages>
+Finding identical cells in module `\vga_bar'.
+Finding identical cells in module `\screen_ctrl'.
+Finding identical cells in module `\key_debounce'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\vga_ctrl'.
+<suppressed ~15 debug messages>
+Finding identical cells in module `\vga_pll'.
+Removed a total of 136 cells.
+
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \vga_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \vga_pic..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_end..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$345.
+    dead port 1/2 on $mux $procmux$312.
+    dead port 1/2 on $mux $procmux$309.
+    dead port 1/2 on $mux $procmux$303.
+    dead port 1/2 on $mux $procmux$300.
+    dead port 2/2 on $mux $procmux$297.
+    dead port 1/2 on $mux $procmux$333.
+    dead port 1/2 on $mux $procmux$327.
+    dead port 2/2 on $mux $procmux$324.
+Running muxtree optimizer on module \vga_must..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$429.
+    dead port 1/2 on $mux $procmux$408.
+    dead port 1/2 on $mux $procmux$423.
+    dead port 2/2 on $mux $procmux$420.
+    dead port 1/2 on $mux $procmux$405.
+    dead port 1/2 on $mux $procmux$381.
+    dead port 1/2 on $mux $procmux$378.
+    dead port 1/2 on $mux $procmux$375.
+    dead port 1/2 on $mux $procmux$369.
+    dead port 1/2 on $mux $procmux$366.
+    dead port 1/2 on $mux $procmux$399.
+    dead port 1/2 on $mux $procmux$363.
+    dead port 2/2 on $mux $procmux$360.
+    dead port 2/2 on $mux $procmux$441.
+    dead port 1/2 on $mux $procmux$396.
+    dead port 2/2 on $mux $procmux$393.
+Running muxtree optimizer on module \vga_bar..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$606.
+    dead port 1/2 on $mux $procmux$600.
+    dead port 1/2 on $mux $procmux$597.
+    dead port 1/2 on $mux $procmux$591.
+    dead port 1/2 on $mux $procmux$588.
+    dead port 1/2 on $mux $procmux$585.
+    dead port 1/2 on $mux $procmux$579.
+    dead port 1/2 on $mux $procmux$576.
+    dead port 1/2 on $mux $procmux$573.
+    dead port 1/2 on $mux $procmux$570.
+    dead port 1/2 on $mux $procmux$564.
+    dead port 1/2 on $mux $procmux$561.
+    dead port 1/2 on $mux $procmux$558.
+    dead port 1/2 on $mux $procmux$555.
+    dead port 1/2 on $mux $procmux$552.
+    dead port 1/2 on $mux $procmux$546.
+    dead port 1/2 on $mux $procmux$543.
+    dead port 1/2 on $mux $procmux$540.
+    dead port 1/2 on $mux $procmux$537.
+    dead port 1/2 on $mux $procmux$534.
+    dead port 1/2 on $mux $procmux$531.
+    dead port 1/2 on $mux $procmux$525.
+    dead port 1/2 on $mux $procmux$522.
+    dead port 1/2 on $mux $procmux$519.
+    dead port 1/2 on $mux $procmux$516.
+    dead port 1/2 on $mux $procmux$513.
+    dead port 1/2 on $mux $procmux$510.
+    dead port 1/2 on $mux $procmux$507.
+    dead port 1/2 on $mux $procmux$501.
+    dead port 1/2 on $mux $procmux$498.
+    dead port 1/2 on $mux $procmux$495.
+    dead port 1/2 on $mux $procmux$492.
+    dead port 1/2 on $mux $procmux$489.
+    dead port 1/2 on $mux $procmux$486.
+    dead port 1/2 on $mux $procmux$483.
+    dead port 1/2 on $mux $procmux$480.
+    dead port 1/2 on $mux $procmux$474.
+    dead port 1/2 on $mux $procmux$471.
+    dead port 1/2 on $mux $procmux$468.
+    dead port 1/2 on $mux $procmux$465.
+    dead port 1/2 on $mux $procmux$462.
+    dead port 1/2 on $mux $procmux$459.
+    dead port 1/2 on $mux $procmux$456.
+    dead port 1/2 on $mux $procmux$453.
+    dead port 1/2 on $mux $procmux$450.
+Running muxtree optimizer on module \screen_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \key_debounce..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_pll..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 70 multiplexer ports.
+<suppressed ~18 debug messages>
+
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \vga_top.
+  Optimizing cells in module \vga_pic.
+  Optimizing cells in module \vga_end.
+  Optimizing cells in module \vga_must.
+  Optimizing cells in module \vga_bar.
+  Optimizing cells in module \screen_ctrl.
+  Optimizing cells in module \key_debounce.
+  Optimizing cells in module \vga_ctrl.
+  Optimizing cells in module \vga_pll.
+Performed a total of 0 changes.
+
+12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\vga_top'.
+Finding identical cells in module `\vga_pic'.
+Finding identical cells in module `\vga_end'.
+<suppressed ~39 debug messages>
+Finding identical cells in module `\vga_must'.
+<suppressed ~69 debug messages>
+Finding identical cells in module `\vga_bar'.
+Finding identical cells in module `\screen_ctrl'.
+Finding identical cells in module `\key_debounce'.
+Finding identical cells in module `\vga_ctrl'.
+Finding identical cells in module `\vga_pll'.
+Removed a total of 36 cells.
+
+12.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \vga_top..
+Finding unused cells or wires in module \vga_pic..
+Finding unused cells or wires in module \vga_end..
+Finding unused cells or wires in module \vga_must..
+Finding unused cells or wires in module \vga_bar..
+Finding unused cells or wires in module \screen_ctrl..
+Finding unused cells or wires in module \key_debounce..
+Finding unused cells or wires in module \vga_ctrl..
+Finding unused cells or wires in module \vga_pll..
+Removed 5 unused cells and 404 unused wires.
+<suppressed ~13 debug messages>
+
+12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module key_debounce.
+Optimizing module screen_ctrl.
+Optimizing module vga_bar.
+Optimizing module vga_ctrl.
+Optimizing module vga_end.
+Optimizing module vga_must.
+Optimizing module vga_pic.
+Optimizing module vga_pll.
+Optimizing module vga_top.
+
+12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \key_debounce..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \screen_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_bar..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_end..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_must..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_pic..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_pll..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \vga_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \key_debounce.
+  Optimizing cells in module \screen_ctrl.
+  Optimizing cells in module \vga_bar.
+  Optimizing cells in module \vga_ctrl.
+  Optimizing cells in module \vga_end.
+    New ctrl vector for $pmux cell $procmux$288: { $auto$opt_reduce.cc:132:opt_mux$656 $auto$opt_reduce.cc:132:opt_mux$654 $auto$opt_reduce.cc:132:opt_mux$652 }
+    New ctrl vector for $pmux cell $procmux$315: { $procmux$295_CMP $procmux$294_CMP $procmux$293_CMP $procmux$292_CMP $procmux$291_CMP $procmux$290_CMP $auto$opt_reduce.cc:132:opt_mux$658 }
+    New ctrl vector for $pmux cell $procmux$336: { $procmux$293_CMP $auto$opt_reduce.cc:132:opt_mux$662 $auto$opt_reduce.cc:132:opt_mux$660 }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$651: { $procmux$289_CMP $procmux$296_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$653: { $procmux$290_CMP $procmux$295_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$655: { $procmux$292_CMP $procmux$291_CMP $procmux$293_CMP $procmux$294_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$657: { $procmux$289_CMP $procmux$296_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$659: { $procmux$289_CMP $procmux$296_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$661: { $procmux$292_CMP $procmux$290_CMP $procmux$291_CMP $procmux$294_CMP $procmux$295_CMP }
+  Optimizing cells in module \vga_end.
+  Optimizing cells in module \vga_must.
+    New ctrl vector for $pmux cell $procmux$351: { $procmux$359_CMP $auto$opt_reduce.cc:132:opt_mux$664 }
+    New ctrl vector for $pmux cell $procmux$384: { $procmux$357_CMP $auto$opt_reduce.cc:132:opt_mux$670 $auto$opt_reduce.cc:132:opt_mux$668 $auto$opt_reduce.cc:132:opt_mux$666 }
+    New ctrl vector for $pmux cell $procmux$411: { $auto$opt_reduce.cc:132:opt_mux$672 $procmux$352_CMP }
+    New ctrl vector for $pmux cell $procmux$432: { $procmux$358_CMP $procmux$357_CMP $procmux$356_CMP $auto$opt_reduce.cc:132:opt_mux$674 }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$663: { $procmux$352_CMP $procmux$353_CMP $procmux$354_CMP $procmux$355_CMP $procmux$356_CMP $procmux$357_CMP $procmux$358_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$665: { $procmux$352_CMP $procmux$356_CMP $procmux$359_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$667: { $procmux$353_CMP $procmux$358_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$669: { $procmux$354_CMP $procmux$355_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$671: { $procmux$353_CMP $procmux$354_CMP $procmux$355_CMP $procmux$356_CMP $procmux$357_CMP $procmux$358_CMP $procmux$359_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$673: { $procmux$352_CMP $procmux$353_CMP $procmux$354_CMP $procmux$355_CMP $procmux$359_CMP }
+  Optimizing cells in module \vga_must.
+  Optimizing cells in module \vga_pic.
+  Optimizing cells in module \vga_pll.
+  Optimizing cells in module \vga_top.
+Performed a total of 19 changes.
+
+12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\key_debounce'.
+Finding identical cells in module `\screen_ctrl'.
+Finding identical cells in module `\vga_bar'.
+Finding identical cells in module `\vga_ctrl'.
+Finding identical cells in module `\vga_end'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\vga_must'.
+Finding identical cells in module `\vga_pic'.
+Finding identical cells in module `\vga_pll'.
+Finding identical cells in module `\vga_top'.
+Removed a total of 2 cells.
+
+12.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \key_debounce..
+Finding unused cells or wires in module \screen_ctrl..
+Finding unused cells or wires in module \vga_bar..
+Finding unused cells or wires in module \vga_ctrl..
+Finding unused cells or wires in module \vga_end..
+Finding unused cells or wires in module \vga_must..
+Finding unused cells or wires in module \vga_pic..
+Finding unused cells or wires in module \vga_pll..
+Finding unused cells or wires in module \vga_top..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module key_debounce.
+Optimizing module screen_ctrl.
+Optimizing module vga_bar.
+Optimizing module vga_ctrl.
+Optimizing module vga_end.
+Optimizing module vga_must.
+Optimizing module vga_pic.
+Optimizing module vga_pll.
+Optimizing module vga_top.
+
+12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \key_debounce..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \screen_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_bar..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_end..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_must..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_pic..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_pll..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \vga_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \key_debounce.
+  Optimizing cells in module \screen_ctrl.
+  Optimizing cells in module \vga_bar.
+  Optimizing cells in module \vga_ctrl.
+  Optimizing cells in module \vga_end.
+  Optimizing cells in module \vga_must.
+  Optimizing cells in module \vga_pic.
+  Optimizing cells in module \vga_pll.
+  Optimizing cells in module \vga_top.
+Performed a total of 0 changes.
+
+12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\key_debounce'.
+Finding identical cells in module `\screen_ctrl'.
+Finding identical cells in module `\vga_bar'.
+Finding identical cells in module `\vga_ctrl'.
+Finding identical cells in module `\vga_end'.
+Finding identical cells in module `\vga_must'.
+Finding identical cells in module `\vga_pic'.
+Finding identical cells in module `\vga_pll'.
+Finding identical cells in module `\vga_top'.
+Removed a total of 0 cells.
+
+12.20. Executing OPT_RMDFF pass (remove dff with constant values).
+
+12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \key_debounce..
+Finding unused cells or wires in module \screen_ctrl..
+Finding unused cells or wires in module \vga_bar..
+Finding unused cells or wires in module \vga_ctrl..
+Finding unused cells or wires in module \vga_end..
+Finding unused cells or wires in module \vga_must..
+Finding unused cells or wires in module \vga_pic..
+Finding unused cells or wires in module \vga_pll..
+Finding unused cells or wires in module \vga_top..
+
+12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module key_debounce.
+Optimizing module screen_ctrl.
+Optimizing module vga_bar.
+Optimizing module vga_ctrl.
+Optimizing module vga_end.
+Optimizing module vga_must.
+Optimizing module vga_pic.
+Optimizing module vga_pll.
+Optimizing module vga_top.
+
+12.23. Finished OPT passes. (There is nothing left to do.)
+
+13. Printing statistics.
+
+=== key_debounce ===
+
+   Number of wires:                 15
+   Number of wire bits:             87
+   Number of public wires:           7
+   Number of public wire bits:      25
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     $add                            1
+     $adff                           3
+     $and                            1
+     $eq                             1
+     $mux                            4
+     $ne                             1
+     $not                            1
+
+=== screen_ctrl ===
+
+   Number of wires:                 11
+   Number of wire bits:             16
+   Number of public wires:           4
+   Number of public wire bits:       5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $adff                           1
+     $eq                             2
+     $logic_not                      1
+     $mux                            3
+     $pmux                           1
+
+=== vga_bar ===
+
+   Number of wires:                 21
+   Number of wire bits:            180
+   Number of public wires:           2
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $lt                            10
+     $mux                           10
+
+=== vga_ctrl ===
+
+   Number of wires:                 34
+   Number of wire bits:            163
+   Number of public wires:          12
+   Number of public wire bits:      78
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 31
+     $add                            2
+     $adff                           2
+     $eq                             2
+     $ge                             3
+     $le                             2
+     $logic_and                      5
+     $lt                             3
+     $mux                           10
+     $sub                            2
+
+=== vga_end ===
+
+   Number of wires:                 66
+   Number of wire bits:            487
+   Number of public wires:          10
+   Number of public wire bits:      56
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 62
+     $div                            2
+     $eq                             7
+     $ge                             4
+     $logic_and                      7
+     $logic_not                      1
+     $lt                             4
+     $mux                           16
+     $pmux                           3
+     $reduce_or                      4
+     $shiftx                        11
+     $sub                            3
+
+=== vga_must ===
+
+   Number of wires:                 71
+   Number of wire bits:            501
+   Number of public wires:          11
+   Number of public wire bits:      57
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 67
+     $div                            2
+     $eq                             7
+     $ge                             5
+     $logic_and                      9
+     $logic_not                      1
+     $lt                             5
+     $mux                           16
+     $pmux                           4
+     $reduce_or                      6
+     $shiftx                         9
+     $sub                            3
+
+=== vga_pic ===
+
+   Number of wires:                 13
+   Number of wire bits:            107
+   Number of public wires:           9
+   Number of public wire bits:      88
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $adff                           1
+     $eq                             2
+     $logic_not                      1
+     $pmux                           1
+     vga_bar                         1
+     vga_end                         1
+     vga_must                        1
+
+=== vga_pll ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $adff                           1
+     $not                            1
+
+=== vga_top ===
+
+   Number of wires:                 12
+   Number of wire bits:             61
+   Number of public wires:          12
+   Number of public wire bits:      61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     key_debounce                    1
+     screen_ctrl                     1
+     vga_ctrl                        1
+     vga_pic                         1
+     vga_pll                         1
+
+=== design hierarchy ===
+
+   vga_top                           1
+     key_debounce                    1
+     screen_ctrl                     1
+     vga_ctrl                        1
+     vga_pic                         1
+       vga_bar                       1
+       vga_end                       1
+       vga_must                      1
+     vga_pll                         1
+
+   Number of wires:                247
+   Number of wire bits:           1606
+   Number of public wires:          70
+   Number of public wire bits:     399
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                207
+     $add                            3
+     $adff                           8
+     $and                            1
+     $div                            4
+     $eq                            21
+     $ge                            12
+     $le                             2
+     $logic_and                     21
+     $logic_not                      4
+     $lt                            22
+     $mux                           59
+     $ne                             1
+     $not                            2
+     $pmux                           9
+     $reduce_or                     10
+     $shiftx                        20
+     $sub                            8
+
+14. Generating Graphviz representation of design.
+ERROR: For formats different than 'ps' or 'dot' only one module must be selected.
